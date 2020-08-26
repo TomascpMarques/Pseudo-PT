@@ -15,6 +15,8 @@
         👉 Funções
         👉 Estruturas de dados simples
         👉 Algoritmos
+    
+    É uma linguagem descritiva, como por exemplo JS.
 
 ### Estado:
     Em Desenvolvimento 
