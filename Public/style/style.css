@@ -24,13 +24,15 @@ html {
     max-height: 100vh;
     max-width: 100vw;
     display: grid;
-    row-gap: 1rem;
+    row-gap: 1.5rem;
     grid-template-rows: .04fr 4fr .02fr;
     grid-template-areas: "header" "main" "footer";
 }
 
 main {
     grid-area: main;
+    padding-right: 1.2rem;
+    padding-left: 1rem;
 }
 
 header {
@@ -58,9 +60,9 @@ header h1 {
     width: max-content;
     font-weight: 500;
     line-height: 1.55rem;
-    -webkit-box-shadow: 10px 10px 9px -1px rgba(46, 187, 242, 0.5);
-    -moz-box-shadow: 10px 10px 9px -1px rgba(46, 187, 242, 0.5);
-    box-shadow: 10px 10px 9px -1px rgba(46, 187, 242, 0.5);
+    -webkit-box-shadow: 10px 10px 9px -1px #2ebbf280;
+    -moz-box-shadow: 10px 10px 9px -1px #2ebbf280;
+    box-shadow: 10px 10px 9px -1px #2ebbf280;
 }
 
 .intro-quote {
@@ -86,13 +88,39 @@ header h1 {
 }
 
 .IDE-display {
-    margin: 1vw;
-    padding: .5vw;
-    background-color: var(--col-one);
+    margin: .5rem;
+    margin-top: 4rem;
+    padding: 1rem;
+    background-color: #0a2446;
+    border-radius: 20px;
+    -webkit-box-shadow: 10px 10px 9px -1px #09314180;
+    -moz-box-shadow: 10px 10px 9px -1px #09314180;
+    box-shadow: 10px 10px 9px -1px #09314180;
 }
 
-.IDE-display h2 {
-    margin-left: 1vw;
+.IDE-display h1 {
+    font-size: 3rem;
+    padding: .2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 0;
+    letter-spacing: 3px;
+    color: var(--col-four);
+    font-weight: bold;
+    background-color: #0c74b457;
+    border-radius: 20px;
+    border: 2px solid var(--col-one);
+    max-width: max-content;
+}
+
+#CorrerCod {
+    font-size: 1.2rem;
+    font-weight: normal;
+    background-color: #169ef257;
+    border: 2px solid var(--col-one);
+    border-radius: 100px;
+    color: var(--col-four);
+    padding: 7px 15px 7px 15px;
 }
 
 footer {
