@@ -90,27 +90,23 @@ header h1 {
 .IDE-display {
     margin: .5rem;
     margin-top: 4rem;
-    padding: 1rem;
+    padding: 1.5rem;
     background-color: #0a2446;
     border-radius: 20px;
     -webkit-box-shadow: 10px 10px 9px -1px #09314180;
     -moz-box-shadow: 10px 10px 9px -1px #09314180;
     box-shadow: 10px 10px 9px -1px #09314180;
+    width: max-content;
 }
 
 .IDE-display h1 {
     font-size: 3rem;
-    padding: .2rem;
-    padding-left: 1rem;
+    padding: 0rem;
     padding-right: 1rem;
     margin-top: 0;
+    margin-bottom: 1rem;
     letter-spacing: 3px;
     color: var(--col-four);
-    font-weight: bold;
-    background-color: #0c74b457;
-    border-radius: 20px;
-    border: 2px solid var(--col-one);
-    max-width: max-content;
 }
 
 #CorrerCod {
@@ -121,6 +117,22 @@ header h1 {
     border-radius: 100px;
     color: var(--col-four);
     padding: 7px 15px 7px 15px;
+    margin-top: 2rem;
+}
+
+#ideText {
+    height: 60vh;
+    width: 65vw;
+    padding: .7rem;
+    padding-left: 1.4rem;
+    background-color: #113c7465;
+    border: 0px solid;
+    border-radius: 15px;
+    border-bottom-right-radius: 35px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--col-five);
+    font-family: 'Fira Code', monospace;
 }
 
 footer {
