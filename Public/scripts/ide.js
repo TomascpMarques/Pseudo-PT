@@ -1,11 +1,51 @@
 'use strict';
 
-let plrv_resrv = [
-    'inteiro', 'Funcao', 'por',
-    'FALSSO', 'VERDADE', 'real',
-    'devolve', 'enquanto', 'vetor',
-    'string', 'receber', 'enviar',
-];
+//importar o modulo do monaco editor dos ficheiros
+//especificar o path do modulo para a abreviação 'vs'
+require.config({
+    paths: {
+        'vs': './scripts/node_modules/monaco-editor/min/vs'
+    }
+});
+
+//Criar o editor monaco no browser
+require(['vs/editor/editor.main'], function() {
+    monaco.languages.register({ id: 'PseudoPT' });
+
+
+    monaco.languages.setMonarchTokensProvider('PseudoPT', {
+        tokenizer: {
+            type
+
+            operators: [
+                '=', '>', '<', '!', '~', '?', ':', '==', '<=', '>=', '!=',
+                '&&', '||', '++', '--', '+', '-', '*', '/', '&', '|', '^', '%',
+                '<<', '>>', '>>>', '+=', '-=', '*=', '/=', '&=', '|=', '^=',
+                '%=', '<<=', '>>=', '>>>='
+            ],
+
+            root: [
+
+            ],
+        }
+    });
+
+    window.editor = monaco.editor.create(document.getElementById('container'), {
+        //texto inicial do editor
+        value: [
+            'function x() {',
+            '\tconsole.log("Hello world!");',
+            '}'
+        ].join('\n'),
+        //a linguagem do Pseudo-PT
+        language: 'PseudoPT',
+        //Aspeto do editor
+        theme: "vs-dark",
+        //Aparência do Texto
+        fontSize: '18px',
+        fontWeight: 'bold',
+    });
+});
 
 /**
  * analisar:
@@ -16,19 +56,14 @@ let plrv_resrv = [
  *      - Filtrar todos os ''/vazio do vetor
  */
 let analisar = (str) => {
-    return str.value
+    return str
         .replace(/(\s)/gm, '«»')
         .split('«»')
         .filter(a => a != '');
 };
 
-let main = (x) => {
-    //defalut = ideText se não se especificar o x
-    x = 'ideText' || x
-    const ide = document.getElementById(x);
+let main = () => {
+    var conteudo = window.editor.getValue();
 
-    let conteudo = analisar(ide);
-
-    console.log(conteudo);
-    console.log(ide[1]);
+    console.log(analisar(conteudo));
 };

@@ -38,7 +38,10 @@
             </div>
             <div class="IDE-display">
                 <h1>IDE💻</h1>
-                <textarea name="IDE" id="ideText" spellcheck="false" autocapitalize="false" oninput="main()"></textarea>
+
+                <div id="container" oninput="main()">
+                </div>
+
                 <br>
                 <button type="button" id="CorrerCod">
                     Correr
@@ -51,6 +54,7 @@
         </footer>
     </div>
 
+    <script src="./scripts/node_modules/monaco-editor/min/vs/loader.js"></script>
     <script src="./scripts/textarea_tab.js"></script>
     <script src="./scripts/ide.js"></script>
 </body>
