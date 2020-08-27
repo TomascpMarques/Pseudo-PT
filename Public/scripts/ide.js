@@ -1,13 +1,12 @@
 'use strict';
 
-
 /**
- * 
- * @param str string a ser tratada
- * Parametros de tratamento:
- *  - Retirar espaços, substituir por '«»'
- *  - Dividir str por cada '«»', transformar num vetor
- *  - Filtrar todos os ''/vazio do vetor
+ * Parse:
+ *  @param str string a ser tratada
+ *  Parametros de tratamento:
+ *      - Retirar espaços, substituir por '«»'
+ *      - Dividir str por cada '«»', transformar num vetor
+ *      - Filtrar todos os ''/vazio do vetor
  */
 let parse = (str) => {
     return str.value
