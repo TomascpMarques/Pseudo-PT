@@ -1,4 +1,4 @@
-# Pseudo-PT
+## Pseudo-PT
  Linguagem de Pseudo-código
 
 ### Linguagens utilizadas

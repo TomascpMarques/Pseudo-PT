@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-PT</title>
+    <style>
+        @import url('./style/style.css');
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+    </style>
+</head>
+
+<body>
+    <div class="main-grid-display">
+        <header>
+            <h1>Pseudo-PT 🐓</h1>
+        </header>
+        <main>
+            <div class="intro-display">
+                <h1> O que é ? 📗</h1>
+                <p> O objétivo aqui, é facilitar a comprensão dos conceitos de programação.
+                    <br> Através de uma pseudo linguagem linguagem, para facilitar a aprendizagem
+                    <br> Aqui poderás programar conceitos de programação, como ciclos e funções.
+                    <br>
+                </p>
+            </div>
+            <div class="intro-display">
+                <h2>Funcionalidades ✅</h2>
+                <ul class="funcs">
+                    <li> 👉 Tipos de dados</li>
+                    <li> 👉 Ciclos</li>
+                    <li> 👉 Funções</li>
+                    <li> 👉 Estruturas de dados simples</li>
+                    <li> 👉 Algoritmos</li>
+                </ul>
+            </div>
+            <div class="IDE-display">
+                <h1>IDE💻</h1>
+                <textarea name="IDE" id="ideText" spellcheck="false" autocapitalize="false" oninput="main()">
+                </textarea>
+                <br>
+                <button type="button" id="CorrerCod">
+                    Correr
+                </button>
+            </div>
+        </main>
+        <footer>
+            <h2>Projeto Pseudo-PT</h2>
+            <p><strong>Criado por Tomás Marques</strong></p>
+        </footer>
+    </div>
+
+    <script src="./scripts/textarea_tab.js"></script>
+    <script src="./scripts/ide.js"></script>
+</body>
+
+</html>
