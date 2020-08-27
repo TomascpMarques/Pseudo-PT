@@ -10,7 +10,7 @@
  */
 let parse = (str) => {
     return str.value
-        .replace(/(\s*)/gm, '«»')
+        .replace(/(\s)/gm, '«»')
         .split('«»')
         .filter(a => a != '');
 };
