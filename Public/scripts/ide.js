@@ -1,14 +1,21 @@
 'use strict';
 
+let plrv_resrv = [
+    'inteiro', 'Funcao', 'por',
+    'FALSSO', 'VERDADE', 'real',
+    'devolve', 'enquanto', 'vetor',
+    'string', 'receber', 'enviar',
+];
+
 /**
- * Parse:
+ * analisar:
  *  @param str string a ser tratada
  *  Parametros de tratamento:
  *      - Retirar espaços, substituir por '«»'
  *      - Dividir str por cada '«»', transformar num vetor
  *      - Filtrar todos os ''/vazio do vetor
  */
-let parse = (str) => {
+let analisar = (str) => {
     return str.value
         .replace(/(\s)/gm, '«»')
         .split('«»')
@@ -20,7 +27,8 @@ let main = (x) => {
     x = 'ideText' || x
     const ide = document.getElementById(x);
 
-    let content = parse(ide);
+    let conteudo = analisar(ide);
 
-    console.log(content);
+    console.log(conteudo);
+    console.log(ide[1]);
 };
