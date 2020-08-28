@@ -109,7 +109,7 @@ header h1 {
     color: var(--col-four);
 }
 
-#CorrerCod {
+.ide-but {
     font-size: 1.2rem;
     font-weight: normal;
     background-color: #169ef257;
@@ -121,17 +121,30 @@ header h1 {
     transition: .6s ease-in-out;
 }
 
-#CorrerCod:hover {
+.ide-but:hover {
     background-color: var(--col-three);
     color: white;
     border-color: var(--col-three);
 }
 
 #container {
-    width: 67vw;
-    height: 70vh;
+    width: 78vw;
+    height: 72vh;
     border: 0px solid;
     color: #808080;
+}
+
+.idebut {
+    color: white;
+    position: fixed;
+    top: 90vh;
+    left: 89vw;
+    text-decoration: none;
+    font-size: 25px;
+    padding: 7px 20px 7px 20px;
+    border: 3px solid blue;
+    border-radius: 100px;
+    background-color: #0a244696;
 }
 
 footer {

@@ -14,6 +14,7 @@
 
 <body>
     <div class="main-grid-display">
+        <a href="#ide" class='idebut'>Editor</a>
         <header>
             <h1>Pseudo-PT 🐓</h1>
         </header>
@@ -23,29 +24,27 @@
                 <p> O objétivo aqui, é facilitar a comprensão dos conceitos de programação.
                     <br> Através de uma pseudo linguagem linguagem, para facilitar a aprendizagem
                     <br> Aqui poderás programar conceitos de programação, como ciclos e funções.
-                    <br>
+                    <br> Poderás usar o editor de texto MONACO da Microsoft insserido neste Site,
+                    <br> para poderes programar em PseudoPT !
                 </p>
             </div>
             <div class="intro-display">
-                <h2>✅ Funcionalidades</h2>
+                <h2> Algumas das Funcionalidades</h2>
                 <ul class="funcs">
                     <li> 👉 Tipos de dados</li>
                     <li> 👉 Ciclos</li>
                     <li> 👉 Funções</li>
+                    <li> 👉 Estruturas de decisão</li>
                     <li> 👉 Estruturas de dados simples</li>
                     <li> 👉 Algoritmos</li>
                 </ul>
             </div>
-            <div class="IDE-display">
-                <h1>IDE💻</h1>
+            <div class="IDE-display" id="ide">
+                <h1>💻 Monaco</h1>
 
-                <div id="container" oninput="main()">
-                </div>
+                <div id="container" oninput="main()"></div>
 
-                <br>
-                <button type="button" id="CorrerCod">
-                    Correr
-                </button>
+                <button type="button" id="CorrerCod" class="ide-but"> Correr </button>
             </div>
         </main>
         <footer>
