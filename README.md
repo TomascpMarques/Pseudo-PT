@@ -1,5 +1,5 @@
 ## Pseudo-PT
- Linguagem de Pseudo-código
+ Linguagem de Pseudocódigo
 
 ### Linguagens utilizadas
     1. HTML 
