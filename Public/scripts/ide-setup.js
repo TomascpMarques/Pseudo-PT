@@ -230,12 +230,12 @@ require(['vs/editor/editor.main'], function() {
     window.editor = monaco.editor.create(document.getElementById('container'), {
         //texto inicial do editor
         value: [
-            '// Função x com saída',
+            '// Função x com saída //',
             'Func x() {',
             '\tenviar("Olá Mundo")',
             '\tdevolver 0',
             '}',
-            '\n// Estrutura de decisão \'IF\'',
+            '\n// Estrutura de decisão \'IF\'//',
             'se (5 + 4 igual 9) {',
             '\tenviar(5+4)',
             '}'

@@ -1,0 +1,84 @@
+:root {
+    --col-one: #056CF2;
+    --col-two: #0583F2;
+    --col-three: #169EF2;
+    --col-four: #2EBBF2;
+    --col-five: #F2F2F2;
+    --cor-bck: #131313;
+    --cor-title: #2a2a2a;
+    --cor-light: #373737;
+    --cor-hover: #192DA1;
+    --cor-font: #fff;
+    --bx-shadow: 10px 9px 7px 1px #074c618f;
+    --heigth: 180px;
+    --width: 520px;
+}
+
+.box-res {
+    font-family: 'Nunito', sans-serif;
+    display: inline-block;
+    background-color: var(--col-three);
+    border-radius: .8rem;
+    display: block;
+    width: var(--width);
+    transition: .63s;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    position: relative;
+    z-index: 2;
+    /*overflow very important - 
+        para só se poder 
+        selecionar a area 
+        visível
+    */
+    overflow-y: hidden;
+}
+
+.box-button {
+    padding: .5rem;
+    background-color: #01010100;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.box-cont {
+    transition: .6s;
+    opacity: 0;
+    height: 0px;
+    -moz-user-select: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: white;
+}
+
+.box-res:hover .box-cont {
+    animation-name: appear;
+    transition: 1s;
+    animation-iteration-count: initial;
+    transition-timing-function: ease-in-out;
+    opacity: 1;
+    height: var(--heigth);
+}
+
+.box-res:hover {
+    background-color: var(--col-one);
+    animation-name: move;
+    transition-timing-function: ease-in-out;
+    transition: .63s;
+    animation-iteration-count: initial;
+    transform: translateX(5px);
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        height: 0px;
+    }
+    to {
+        height: var(--heigth);
+        opacity: 1;
+    }
+}

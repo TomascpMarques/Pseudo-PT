@@ -7,14 +7,21 @@
     <title>Pseudo-PT</title>
     <style>
         @import url('./style/style.css');
+        @import url('./style/documentacao-style.css');
+        @import url('./style/editor.css');
+        @import url('./style/move-but.css');
+        @import url('./style/intro-cont.css');
         @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <div class="main-grid-display">
-        <a href="#ide" class='idebut'>Editor</a>
+    <div class="main-grid-display" id="top">
+        <a href="#top" class='topbut'>Topo</a>
+        <br>
+        <a href="#fundo" class='fundobut'>Fundo</a>
         <header>
             <h1>Pseudo-PT 🐓</h1>
         </header>
@@ -39,19 +46,79 @@
                     <li> 👉 Algoritmos</li>
                 </ul>
             </div>
+            <br>
+            <div class="box-res">
+                <button class="box-button" type="button">
+                        <i class="fa fa-circle-o-notch fa-spin" style="font-size:20px"></i>
+                        Tipos de dados
+                    </button>
+                <i class="fas fa-clock"></i>
+                <div class="box-cont">
+                    <ul class="box-list">
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="box-res">
+                <button class="box-button" type="button">
+                        <i class="fa fa-circle-o-notch fa-spin" style="font-size:20px"></i>
+                        Funções
+                    </button>
+                <i class="fas fa-clock"></i>
+                <div class="box-cont">
+                    <ul class="box-list">
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="box-res">
+                <button class="box-button" type="button">
+                        <i class="fa fa-circle-o-notch fa-spin" style="font-size:20px"></i>
+                        Ciclos
+                    </button>
+                <i class="fas fa-clock"></i>
+                <div class="box-cont">
+                    <ul class="box-list">
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
+                    </ul>
+                </div>
+            </div>
+
+            <br>
             <div class="IDE-display" id="ide">
                 <h1>💻 Monaco</h1>
 
                 <div id="container"></div>
 
                 <button type="button" id="CorrerCod" class="ide-but" onclick="main()">
-                     Correr 
+                    <a href="#output" style="text-decoration: none; color: white;">
+                        Correr
+                    </a>
                 </button>
+                <button type="button" id="CorrerCod" class="ide-but">
+                    <a href="#ide" style="text-decoration: none; color: white;">
+                        Editor
+                    </a>
+                </button>
+
+                <div id="consola">
+                    <h3>RESULTADO</h3>
+                    <textarea id='output' readonly spellcheck="false" autocomplete="false">
+                    </textarea>
+                </div>
             </div>
         </main>
-        <footer>
+        <footer id='fundo'>
             <h2>Projeto Pseudo-PT</h2>
-            <p><strong>Criado por Tomás Marques</strong></p>
+            <p><strong>Criado por Tomás Carruço Pedro Marques</strong></p>
         </footer>
     </div>
 
