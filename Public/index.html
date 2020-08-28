@@ -42,9 +42,11 @@
             <div class="IDE-display" id="ide">
                 <h1>💻 Monaco</h1>
 
-                <div id="container" oninput="main()"></div>
+                <div id="container"></div>
 
-                <button type="button" id="CorrerCod" class="ide-but"> Correr </button>
+                <button type="button" id="CorrerCod" class="ide-but" onclick="main()">
+                     Correr 
+                </button>
             </div>
         </main>
         <footer>
@@ -54,8 +56,8 @@
     </div>
 
     <script src="./scripts/node_modules/monaco-editor/min/vs/loader.js"></script>
-    <script src="./scripts/textarea_tab.js"></script>
-    <script src="./scripts/ide.js"></script>
+    <script src="./scripts/ide-setup.js"></script>
+    <script src="./scripts/pseudo.js"></script>
 </body>
 
 </html>
