@@ -1,38 +1,33 @@
+.butts {
+    margin: 10px;
+    padding: 9px;
+    padding-right: 10px;
+    position: fixed;
+    top: 50vh;
+    left: 87vw;
+    text-align: right;
+    border-right: 4px solid rgb(22, 22, 163);
+    height: max-content;
+    transition: .6s ease-in-out;
+}
+
 .topbut {
     color: white;
-    position: fixed;
-    top: 86vh;
-    left: 90vw;
     text-decoration: none;
     font-size: 20px;
-    padding: 7px 20px 7px 20px;
-    border: 3px solid blue;
+    padding: 5px 20px 5px 20px;
+    border: 3px solid transparent;
+    border-right: 0px solid transparent;
     border-radius: 100px;
     background-color: #0a244696;
+    transition: .44s ease-in-out;
 }
 
-.fundobut {
-    color: white;
-    position: fixed;
-    top: 92vh;
-    left: 90vw;
-    text-decoration: none;
-    font-size: 20px;
-    padding: 7px 20px 7px 20px;
-    border: 3px solid blue;
-    border-radius: 100px;
-    background-color: #0a244696;
+.topbut:hover {
+    background-color: #2871cf;
+    border-color: #2871cf;
 }
 
-.editbut {
-    color: white;
-    position: fixed;
-    top: 80vh;
-    left: 90vw;
-    text-decoration: none;
-    font-size: 20px;
-    padding: 7px 20px 7px 20px;
-    border: 3px solid blue;
-    border-radius: 100px;
-    background-color: #0a244696;
+.butts:hover {
+    border-color: blue;
 }

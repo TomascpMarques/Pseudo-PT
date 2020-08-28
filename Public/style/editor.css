@@ -47,28 +47,23 @@ textarea {
     border-radius: 10px;
     border-top-left-radius: 0;
     width: 97.8%;
-    height: 20vh;
+    height: 25vh;
     background-color: #141427;
     padding: .7rem;
     color: #00db49;
     font-family: 'Fira Code', monospace;
     font-size: 1rem;
     margin: 0;
-    -webkit-box-shadow: 4px 8px 12px 4px rgba(0, 0, 0, 0.33);
-    -moz-box-shadow: 4px 8px 12px 4px rgba(0, 0, 0, 0.33);
-    box-shadow: 4px 8px 12px 4px rgba(0, 0, 0, 0.33);
+    -webkit-box-shadow: 4px 8px 12px 4px rgba(0, 0, 0, 0.445);
+    -moz-box-shadow: 4px 8px 12px 4px rgba(0, 0, 0, 0.445);
+    box-shadow: 4px 8px 12px 4px rgba(0, 0, 0, 0.445);
 }
 
 .IDE-display {
     margin: .5rem;
     margin-top: 2rem;
     padding: 1.3rem;
-    background-color: #0a2446;
-    border-radius: 20px;
     width: max-content;
-    -webkit-box-shadow: 4px 8px 12px 4px rgba(0, 0, 0, 0.33);
-    -moz-box-shadow: 4px 8px 12px 4px rgba(0, 0, 0, 0.33);
-    box-shadow: 4px 8px 12px 4px rgba(0, 0, 0, 0.33);
 }
 
 .IDE-display h1 {
@@ -84,7 +79,7 @@ textarea {
 .ide-but {
     font-size: 1.4rem;
     font-weight: normal;
-    background-color: #169ef257;
+    background-color: #282828;
     border: 2px solid var(--col-one);
     border-radius: 100px;
     color: var(--col-four);
@@ -94,10 +89,12 @@ textarea {
     -webkit-box-shadow: 4px 8px 12px 4px rgba(0, 0, 0, 0.33);
     -moz-box-shadow: 4px 8px 12px 4px rgba(0, 0, 0, 0.33);
     box-shadow: 4px 8px 12px 4px rgba(0, 0, 0, 0.33);
+    transition: .5s ease-in-out;
 }
 
 .ide-but:hover {
     background-color: var(--col-three);
     color: white;
     border-color: var(--col-three);
+    transform: translateY(-10px);
 }
