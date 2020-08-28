@@ -1,0 +1,103 @@
+#container {
+    width: 78vw;
+    height: 72vh;
+    border: 3px solid blue;
+    border-bottom: 4px solid blue;
+    border-radius: 5px;
+    color: #808080;
+    -webkit-box-shadow: 4px 8px 12px 4px rgba(0, 0, 0, 0.33);
+    -moz-box-shadow: 4px 8px 12px 4px rgba(0, 0, 0, 0.33);
+    box-shadow: 4px 8px 12px 4px rgba(0, 0, 0, 0.33);
+}
+
+#consola {
+    padding: .2rem;
+    margin: .6rem;
+    margin-top: 3rem;
+    border-radius: 7px;
+}
+
+#consola h3 {
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 3px solid transparent;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: max-content;
+    margin: 0;
+    padding: .25rem;
+    padding-left: .7rem;
+    padding-right: .7rem;
+    background-color: #1074c58e;
+    -webkit-box-shadow: 4px 8px 12px 4px #00000073;
+    -moz-box-shadow: 4px 8px 12px 4px #00000073;
+    box-shadow: 4px 8px 12px 4px #00000073;
+}
+
+textarea {
+    resize: none;
+}
+
+#output {
+    border: 0px solid transparent;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    width: 97.8%;
+    height: 20vh;
+    background-color: #169ef291;
+    padding: .7rem;
+    color: white;
+    font-family: 'Fira Code', monospace;
+    font-size: 1.2rem;
+    margin: 0;
+    -webkit-box-shadow: 4px 8px 12px 4px rgba(0, 0, 0, 0.33);
+    -moz-box-shadow: 4px 8px 12px 4px rgba(0, 0, 0, 0.33);
+    box-shadow: 4px 8px 12px 4px rgba(0, 0, 0, 0.33);
+}
+
+.IDE-display {
+    margin: .5rem;
+    margin-top: 2rem;
+    padding: 1.3rem;
+    background-color: #0a2446;
+    border-radius: 20px;
+    width: max-content;
+    -webkit-box-shadow: 4px 8px 12px 4px rgba(0, 0, 0, 0.33);
+    -moz-box-shadow: 4px 8px 12px 4px rgba(0, 0, 0, 0.33);
+    box-shadow: 4px 8px 12px 4px rgba(0, 0, 0, 0.33);
+}
+
+.IDE-display h1 {
+    font-size: 3rem;
+    padding: 0rem;
+    padding-right: 1rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    letter-spacing: 3px;
+    color: var(--col-four);
+}
+
+.ide-but {
+    font-size: 1.4rem;
+    font-weight: normal;
+    background-color: #169ef257;
+    border: 2px solid var(--col-one);
+    border-radius: 100px;
+    color: var(--col-four);
+    padding: 7px 15px 7px 15px;
+    margin-top: 1.5rem;
+    transition: .6s ease-in-out;
+    -webkit-box-shadow: 4px 8px 12px 4px rgba(0, 0, 0, 0.33);
+    -moz-box-shadow: 4px 8px 12px 4px rgba(0, 0, 0, 0.33);
+    box-shadow: 4px 8px 12px 4px rgba(0, 0, 0, 0.33);
+}
+
+.ide-but:hover {
+    background-color: var(--col-three);
+    color: white;
+    border-color: var(--col-three);
+}

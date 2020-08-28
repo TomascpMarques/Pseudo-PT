@@ -14,6 +14,14 @@ body {
     --col-three: #169EF2;
     --col-four: #2EBBF2;
     --col-five: #F2F2F2;
+    --cor-bck: #131313;
+    --cor-title: #2a2a2a;
+    --cor-light: #373737;
+    --cor-hover: #192DA1;
+    --cor-font: #fff;
+    --bx-shadow: 10px 9px 7px 1px #074c618f;
+    --heigth: 180px;
+    --width: 520px;
 }
 
 html {
@@ -46,100 +54,6 @@ header {
 header h1 {
     padding: 10px;
     margin: 0;
-}
-
-.intro-display {
-    margin-top: 1.8rem;
-    padding: .8rem;
-    padding-right: 2rem;
-    margin: .6rem;
-    margin-bottom: 1.2rem;
-    background-color: var(--col-two);
-    color: white;
-    border-radius: 15px;
-    border: 3px solid var(--col-one);
-    width: max-content;
-    font-weight: 500;
-    line-height: 1.55rem;
-    transition: .6s ease-in-out;
-}
-
-.intro-quote {
-    padding: 1rem;
-    font-size: 1.5rem;
-}
-
-.intro-display h1 {
-    margin: 1rem;
-    margin-top: 0rem;
-    margin-left: 0rem;
-    padding-top: .8rem;
-    padding-bottom: .5rem;
-}
-
-.intro-display:hover {
-    transform: translateX(15px);
-}
-
-.funcs {
-    list-style: none;
-    padding-left: 1rem;
-}
-
-.funcs li {
-    padding-bottom: .5rem;
-}
-
-.IDE-display {
-    margin: .5rem;
-    margin-top: 4rem;
-    padding: 1.5rem;
-    background-color: #0a2446;
-    border-radius: 20px;
-    width: max-content;
-}
-
-.IDE-display h1 {
-    font-size: 3rem;
-    padding: 0rem;
-    padding-right: 1rem;
-    margin-top: 0;
-    margin-bottom: 1rem;
-    letter-spacing: 3px;
-    color: var(--col-four);
-}
-
-#CorrerCod {
-    font-size: 1.2rem;
-    font-weight: normal;
-    background-color: #169ef257;
-    border: 2px solid var(--col-one);
-    border-radius: 100px;
-    color: var(--col-four);
-    padding: 7px 15px 7px 15px;
-    margin-top: 2rem;
-    transition: .6s ease-in-out;
-}
-
-#CorrerCod:hover {
-    background-color: var(--col-three);
-    color: white;
-    border-color: var(--col-three);
-}
-
-#ideText {
-    height: 60vh;
-    width: 65vw;
-    padding: .7rem;
-    padding-left: 1.4rem;
-    background-color: #113c7465;
-    border: 0px solid;
-    border-radius: 15px;
-    border-bottom-right-radius: 35px;
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: var(--col-five);
-    font-family: 'Fira Code', monospace;
 }
 
 footer {

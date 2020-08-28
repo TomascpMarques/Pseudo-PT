@@ -1,0 +1,42 @@
+.intro-display {
+    margin-top: 1.8rem;
+    padding: .8rem;
+    padding-right: 2rem;
+    margin: .6rem;
+    margin-bottom: 1.2rem;
+    background-color: var(--col-two);
+    color: white;
+    border-radius: 15px;
+    border: 3px solid var(--col-one);
+    width: max-content;
+    font-weight: 600;
+    line-height: 1.55rem;
+    transition: .6s ease-in-out;
+    font-family: 'Nunito', sans-serif;
+}
+
+.intro-quote {
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.intro-display h1 {
+    margin: 1rem;
+    margin-top: 0rem;
+    margin-left: 0rem;
+    padding-top: .8rem;
+    padding-bottom: .5rem;
+}
+
+.intro-display:hover {
+    transform: translateX(15px);
+}
+
+.funcs {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.funcs li {
+    padding-bottom: .5rem;
+}

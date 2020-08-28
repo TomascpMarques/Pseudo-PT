@@ -1,0 +1,25 @@
+.topbut {
+    color: white;
+    position: fixed;
+    top: 84vh;
+    left: 89vw;
+    text-decoration: none;
+    font-size: 25px;
+    padding: 7px 20px 7px 20px;
+    border: 3px solid blue;
+    border-radius: 100px;
+    background-color: #0a244696;
+}
+
+.fundobut {
+    color: white;
+    position: fixed;
+    top: 92vh;
+    left: 89vw;
+    text-decoration: none;
+    font-size: 25px;
+    padding: 7px 20px 7px 20px;
+    border: 3px solid blue;
+    border-radius: 100px;
+    background-color: #0a244696;
+}
