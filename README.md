@@ -1,5 +1,5 @@
-# Pseudo-PT
- Linguagem de Pseudocódigo
+## Pseudo-PT
+ Linguagem de Pseudo-código
 
 ### Linguagens utilizadas
     1. HTML 
@@ -16,11 +16,5 @@
         👉 Estruturas de dados simples
         👉 Algoritmos
 
-## !Estado!
-    Em Desenvolvimento, ainda quero mudar algumas coisas,
-    como por exemplo, alterar um pouco o aspeto, o produto não é final.
-    Ainda não dá para correr código no site, mas já ten algumas features,
-    completion da linguagem, implementadas no editor.
-    
-### Link do site:
-https://tomascpmarques.github.io/Pseudo-PT/Public/
+### Estado:
+    Em Desenvolvimento 
