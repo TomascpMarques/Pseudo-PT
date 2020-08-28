@@ -22,6 +22,8 @@
         <a href="#top" class='topbut'>Topo</a>
         <br>
         <a href="#fundo" class='fundobut'>Fundo</a>
+        <br>
+        <a href="#ide" class='editbut'>Editor</a>
         <header>
             <h1>Pseudo-PT 🐓</h1>
         </header>
@@ -103,16 +105,21 @@
                         Correr
                     </a>
                 </button>
-                <button type="button" id="CorrerCod" class="ide-but">
+                <button type="button" class="ide-but">
                     <a href="#ide" style="text-decoration: none; color: white;">
                         Editor
+                    </a>
+                </button>
+                <button type="button" class="ide-but">
+                    <a href="#output" style="text-decoration: none; color: white;">
+                        Output
                     </a>
                 </button>
 
                 <div id="consola">
                     <h3>RESULTADO</h3>
                     <textarea id='output' readonly spellcheck="false" autocomplete="false">
-                    </textarea>
+                    <textarea id='output' placeholder="[+]" spellcheck="false" autocomplete="false"></textarea>
                 </div>
             </div>
         </main>
@@ -125,6 +132,12 @@
     <script src="./scripts/node_modules/monaco-editor/min/vs/loader.js"></script>
     <script src="./scripts/ide-setup.js"></script>
     <script src="./scripts/pseudo.js"></script>
+
+    <script>
+        setTimeout(() => {
+            console.clear();
+        }, 800);
+    </script>
 </body>
 
 </html>

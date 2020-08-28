@@ -22,7 +22,7 @@
     color: white;
     font-weight: bold;
     letter-spacing: 1.5px;
-    border-left: 3px solid transparent;
+    border-left: 3px solid 141427;
     border-right: 3px solid transparent;
     border-top: 3px solid transparent;
     border-top-left-radius: 10px;
@@ -48,11 +48,11 @@ textarea {
     border-top-left-radius: 0;
     width: 97.8%;
     height: 20vh;
-    background-color: #169ef291;
+    background-color: #141427;
     padding: .7rem;
-    color: white;
+    color: #00db49;
     font-family: 'Fira Code', monospace;
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 0;
     -webkit-box-shadow: 4px 8px 12px 4px rgba(0, 0, 0, 0.33);
     -moz-box-shadow: 4px 8px 12px 4px rgba(0, 0, 0, 0.33);

@@ -1,10 +1,10 @@
 .topbut {
     color: white;
     position: fixed;
-    top: 84vh;
-    left: 89vw;
+    top: 86vh;
+    left: 90vw;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
     padding: 7px 20px 7px 20px;
     border: 3px solid blue;
     border-radius: 100px;
@@ -15,9 +15,22 @@
     color: white;
     position: fixed;
     top: 92vh;
-    left: 89vw;
+    left: 90vw;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
+    padding: 7px 20px 7px 20px;
+    border: 3px solid blue;
+    border-radius: 100px;
+    background-color: #0a244696;
+}
+
+.editbut {
+    color: white;
+    position: fixed;
+    top: 80vh;
+    left: 90vw;
+    text-decoration: none;
+    font-size: 20px;
     padding: 7px 20px 7px 20px;
     border: 3px solid blue;
     border-radius: 100px;
