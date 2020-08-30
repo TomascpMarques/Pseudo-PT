@@ -17,7 +17,7 @@
 .box-res {
     font-family: 'Nunito', sans-serif;
     display: inline-block;
-    background-color: var(--col-three);
+    background-color: #1e1e1e;
     border-radius: .8rem;
     display: block;
     width: var(--width);
@@ -33,6 +33,9 @@
         visível
     */
     overflow-y: hidden;
+    -webkit-box-shadow: -18px -15px 15px -5px rgba(0, 0, 0, 0.63);
+    -moz-box-shadow: -18px -15px 15px -5px rgba(0, 0, 0, 0.63);
+    box-shadow: -18px -15px 15px -5px rgba(0, 0, 0, 0.63);
 }
 
 .box-button {

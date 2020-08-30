@@ -4,7 +4,7 @@
     padding-right: 2rem;
     margin: .6rem;
     margin-bottom: 1.2rem;
-    background-color: var(--col-two);
+    background-color: #232323;
     color: white;
     border-radius: 15px;
     border: 3px solid var(--col-one);
@@ -13,6 +13,9 @@
     line-height: 1.55rem;
     transition: .6s ease-in-out;
     font-family: 'Nunito', sans-serif;
+    -webkit-box-shadow: -18px -15px 15px -5px rgba(0, 0, 0, 0.63);
+    -moz-box-shadow: -18px -15px 15px -5px rgba(0, 0, 0, 0.63);
+    box-shadow: -18px -15px 15px -5px rgba(0, 0, 0, 0.63);
 }
 
 .intro-quote {

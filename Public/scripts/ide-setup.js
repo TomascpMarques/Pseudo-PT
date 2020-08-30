@@ -231,21 +231,20 @@ require(['vs/editor/editor.main'], function() {
         //texto inicial do editor
         value: [
             '// Função x com saída //',
-            'Func x() {',
+            'Func x()',
             '\tenviar("Olá Mundo")',
-            '\tdevolver 0',
-            '}',
+            '\tdevolver (0)',
+            '',
             '\n// Estrutura de decisão \'IF\'//',
-            'se (5 + 4 igual 9) {',
+            'se (5 + 4 igual 9)',
             '\tenviar(5+4)',
-            '}'
         ].join('\n'),
         //a implementação do Pseudo-PT
         language: 'PseudoPT',
         //Aspeto do editor
         theme: "PseudoTema",
         //Aparência do Texto
-        fontSize: '20px',
-        fontWeight: 'bold',
+        fontSize: '19px',
+        fontWeight: '600',
     });
 });

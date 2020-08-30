@@ -19,9 +19,18 @@
 
 <body>
     <div class="main-grid-display" id="top">
-        <a href="#top" class='topbut'>Topo</a>
-        <br>
-        <a href="#fundo" class='fundobut'>Fundo</a>
+        <div class="butts">
+            <a href="#top" class='topbut'>Topo</a>
+            <br>
+            <br>
+            <a href="#fundo" class='topbut'>Fundo</a>
+            <br>
+            <br>
+            <a href="#ide" class='topbut'>Editor</a>
+            <br>
+            <br>
+            <a href="#docs" class='topbut'>Docs</a>
+        </div>
         <header>
             <h1>Pseudo-PT 🐓</h1>
         </header>
@@ -47,52 +56,69 @@
                 </ul>
             </div>
             <br>
-            <div class="box-res">
-                <button class="box-button" type="button">
-                        <i class="fa fa-circle-o-notch fa-spin" style="font-size:20px"></i>
-                        Tipos de dados
-                    </button>
-                <i class="fas fa-clock"></i>
-                <div class="box-cont">
-                    <ul class="box-list">
-                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
-                    </ul>
+
+            <div id="docs">
+                <div class="box-res">
+                    <button class="box-button" type="button">
+                            <i class="fa fa-circle-o-notch fa-spin" style="font-size:20px"></i>
+                            Tipos de dados
+                        </button>
+                    <i class="fas fa-clock"></i>
+                    <div class="box-cont">
+                        <ul class="box-list">
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box-res">
+                    <button class="box-button" type="button">
+                            <i class="fa fa-circle-o-notch fa-spin" style="font-size:20px"></i>
+                            Funções
+                        </button>
+                    <i class="fas fa-clock"></i>
+                    <div class="box-cont">
+                        <ul class="box-list">
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box-res">
+                    <button class="box-button" type="button">
+                            <i class="fa fa-circle-o-notch fa-spin" style="font-size:20px"></i>
+                            Ciclos
+                        </button>
+                    <i class="fas fa-clock"></i>
+                    <div class="box-cont">
+                        <ul class="box-list">
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box-res">
+                    <button class="box-button" type="button">
+                            <i class="fa fa-circle-o-notch fa-spin" style="font-size:20px"></i>
+                            Estruturas de Decisão
+                        </button>
+                    <i class="fas fa-clock"></i>
+                    <div class="box-cont">
+                        <ul class="box-list">
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <div class="box-res">
-                <button class="box-button" type="button">
-                        <i class="fa fa-circle-o-notch fa-spin" style="font-size:20px"></i>
-                        Funções
-                    </button>
-                <i class="fas fa-clock"></i>
-                <div class="box-cont">
-                    <ul class="box-list">
-                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="box-res">
-                <button class="box-button" type="button">
-                        <i class="fa fa-circle-o-notch fa-spin" style="font-size:20px"></i>
-                        Ciclos
-                    </button>
-                <i class="fas fa-clock"></i>
-                <div class="box-cont">
-                    <ul class="box-list">
-                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptatum cum nemo animi error. </li>
-                    </ul>
-                </div>
-            </div>
-
-            <br>
             <div class="IDE-display" id="ide">
                 <h1>💻 Monaco</h1>
 
@@ -103,16 +129,20 @@
                         Correr
                     </a>
                 </button>
-                <button type="button" id="CorrerCod" class="ide-but">
+                <button type="button" class="ide-but">
                     <a href="#ide" style="text-decoration: none; color: white;">
                         Editor
+                    </a>
+                </button>
+                <button type="button" class="ide-but">
+                    <a href="#output" style="text-decoration: none; color: white;">
+                        Output
                     </a>
                 </button>
 
                 <div id="consola">
                     <h3>RESULTADO</h3>
-                    <textarea id='output' readonly spellcheck="false" autocomplete="false">
-                    </textarea>
+                    <textarea id='output' readonly placeholder="[+]" spellcheck="false" autocomplete="false"></textarea>
                 </div>
             </div>
         </main>
@@ -125,6 +155,12 @@
     <script src="./scripts/node_modules/monaco-editor/min/vs/loader.js"></script>
     <script src="./scripts/ide-setup.js"></script>
     <script src="./scripts/pseudo.js"></script>
+
+    <script>
+        setTimeout(() => {
+            console.clear();
+        }, 800);
+    </script>
 </body>
 
 </html>
