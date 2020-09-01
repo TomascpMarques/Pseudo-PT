@@ -231,7 +231,7 @@ require(['vs/editor/editor.main'], function() {
         //texto inicial do editor
         value: [
             '// Função x com saída //',
-            'Func x()',
+            'Func x (asdasd,cvbcvb)',
             '\tenviar("Olá Mundo")',
             '\tdevolver (0)',
             '',
