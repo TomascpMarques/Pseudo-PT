@@ -24,7 +24,7 @@ require(['vs/editor/editor.main'], function() {
         ],
 
         operators: [
-            '=', '>', '<', '!', '', '<=', '>=', "diferente",
+            '=', '>', '<', '!', '==', '<=', '>=', 'diferente',
             'e', 'ou', '+', '-', '*', '/', '+=', '-=', '*=', '/='
         ],
 
@@ -124,9 +124,9 @@ require(['vs/editor/editor.main'], function() {
                     label: 'se',
                     kind: monaco.languages.CompletionItemKind.Snippet,
                     insertText: [
-                        'se (${1:condição}) {',
+                        'se (${1:condição})',
                         '\t// código',
-                        '}',
+                        '\t${2:->}'
                     ].join('\n'),
                     insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
                     documentation: 'Estrutura de decisão:\n<se cond>\n\t-> <código>\n -> <fim>\nEquivalente ao IF clássico'
@@ -139,7 +139,7 @@ require(['vs/editor/editor.main'], function() {
                         '\t// código se verdadeiro',
                         '\t${2:->}',
                         '} senao {',
-                        '\t// código se falsso',
+                        '\t// código se falso',
                         '\t${3:->}',
                         '}',
                     ].join('\n'),
@@ -207,14 +207,14 @@ require(['vs/editor/editor.main'], function() {
                 {
                     label: 'booleano',
                     kind: monaco.languages.CompletionItemKind.Keyword,
-                    insertText: 'boolenao ${1:variável} = ${2:falsso/verdade}',
+                    insertText: 'booleano ${1:variável} = ${2:falso/verdade}',
                     insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
                     documentation: 'Valor booleano.\nExemplo: booleano b = verdade'
                 },
                 {
                     label: 'enviar',
                     kind: monaco.languages.CompletionItemKind.Keyword,
-                    insertText: 'enviar(${1:texto/variavel})',
+                    insertText: 'enviar (${1:texto/variavel})',
                     insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
                     documentation: 'Função enviar.\nExemplo: enviar(x)'
                 },
@@ -231,13 +231,18 @@ require(['vs/editor/editor.main'], function() {
         //texto inicial do editor
         value: [
             '// Função x com saída //',
-            'Func x (asdasd,cvbcvb)',
-            '\tenviar("Olá Mundo")',
-            '\tdevolver (0)',
+            'Func x ()',
+            '\tenviar ("Olá Mundo")',
+            '\tenviar ("asd")',
+            //'\tdevolver (0)',
             '',
-            '\n// Estrutura de decisão \'IF\'//',
-            'se (5 + 4 igual 9)',
-            '\tenviar(5+4)',
+            'inteiro xyz = 123',
+            'real xxxx = 133.13',
+            'booleano asdasd = falso',
+            'string wwww = "asdasd"',
+            'enviar ("teste")',
+            'x ("PseudoPt")',
+            'enviar ("PseudoPT")',
         ].join('\n'),
         //a implementação do Pseudo-PT
         language: 'PseudoPT',

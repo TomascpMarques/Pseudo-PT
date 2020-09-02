@@ -17,17 +17,17 @@
     font-size: 20px;
     padding: 5px 20px 5px 20px;
     border: 3px solid transparent;
-    border-right: 0px solid transparent;
     border-radius: 100px;
     background-color: #0a244696;
     transition: .44s ease-in-out;
 }
 
 .topbut:hover {
-    background-color: #2871cf;
     border-color: #2871cf;
+    background-color: #2871cf;
 }
 
 .butts:hover {
     border-color: blue;
+    transform: translateX(-10px);
 }
