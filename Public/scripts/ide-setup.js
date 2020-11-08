@@ -24,8 +24,8 @@ require(['vs/editor/editor.main'], function() {
         ],
 
         operators: [
-            '=', '>', '<', '!', '==', '<=', '>=', 'diferente',
-            'e', 'ou', '+', '-', '*', '/', '+=', '-=', '*=', '/='
+            '=', '>', '<', '!', '==', '<=', '>=', '!=',
+            '&&', '||', '+', '-', '*', '/', '+=', '-=', '*=', '/='
         ],
 
         symbols: /[=><!~?:&|+\-*\/\^%]+/,
@@ -38,11 +38,11 @@ require(['vs/editor/editor.main'], function() {
                 [/[a-z_$][\w$]*/, {
                     cases: {
                         '@typeKeywords': 'keyword',
-                        '@keywords': 'keyword',
+                        '@keywords': 'type.keyword',
                         '@default': 'identifier'
                     }
                 }],
-                [/[A-Z][\w\$]*/, 'type.identifier'], // mostra os nomes das classes 
+                [/[A-Z][\w\$]*/, 'type.identifier'], // mostra os nomes das classes/Funcs 
 
                 // espaço
                 { include: '@whitespace' },
@@ -115,6 +115,7 @@ require(['vs/editor/editor.main'], function() {
             { token: 'delimiter', foreground: 'ffff00' },
             { token: 'identifier', foreground: 'e6ffe6' },
             { token: 'operator', foreground: 'ffa64d' },
+            { token: 'type.keyword', foreground: '33cc33' },
         ]
     });
 
@@ -135,13 +136,12 @@ require(['vs/editor/editor.main'], function() {
                     label: 'se/senao',
                     kind: monaco.languages.CompletionItemKind.Snippet,
                     insertText: [
-                        'se (${1:condição}) {',
+                        'se (${1:condição}) ',
                         '\t// código se verdadeiro',
                         '\t${2:->}',
-                        '} senao {',
+                        ' senao ',
                         '\t// código se falso',
                         '\t${3:->}',
-                        '}',
                     ].join('\n'),
                     insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
                     documentation: 'Estrutura de decisão:\n<se cond>\n\t-> <código>\n-> <senao>\n\t-> <código>\n -> <fim>\nEquivalente ao IF/ELSE clássico'
@@ -150,10 +150,9 @@ require(['vs/editor/editor.main'], function() {
                     label: 'por',
                     kind: monaco.languages.CompletionItemKind.Snippet,
                     insertText: [
-                        'por (${1:variável}, ${1:variável} < 10, ${2:maneira de iteração}) {',
+                        'por (${1:variável}, ${1:variável} < 10, ${2:maneira de iteração}) ',
                         '\t// código a executar em cada ciclo',
                         '\t${3:->}',
-                        '}',
                     ].join('\n'),
                     insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
                     documentation: 'Cilco/Loop:\n<por -> var,cond,iter>\n\t-> <código> \n-> <fim>\nEquivalente ao ciclo FOR'
@@ -162,10 +161,9 @@ require(['vs/editor/editor.main'], function() {
                     label: 'enquanto',
                     kind: monaco.languages.CompletionItemKind.Snippet,
                     insertText: [
-                        'enquanto (${1:variável} != 25) {',
+                        'enquanto (${1:variável} != 25) ',
                         '\t// código enquanto a condição for verdadeira',
-                        '\t${2:-> }',
-                        '}',
+                        '\t${2:-> ',
                     ].join('\n'),
                     insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
                     documentation: 'Cilco/Loop:\n<enquanto -> cond>\n\t-> <código/iteração> \n-> <fim>\nEquivalente ao ciclo WHILE'
@@ -174,11 +172,10 @@ require(['vs/editor/editor.main'], function() {
                     label: 'Func',
                     kind: monaco.languages.CompletionItemKind.Snippet,
                     insertText: [
-                        'Func ${1:nome da função}(${2:paramêtros}) {',
+                        'Func ${1:nome da função}(${2:paramêtros}) ',
                         '\t// Código da função //',
                         '\t${3:-> }',
-                        '\tdevolver ${4:"valor a devolver"}',
-                        '}'
+                        '\tdevolver (${4:"valor a devolver"})',
                     ].join('\n'),
                     insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
                     documentation: 'Função:\n<funcção (param)>\n\t-> <código>\n-> <devolver valor>\n -> <fim>\nEquivalente a uma função clássica'
@@ -218,6 +215,13 @@ require(['vs/editor/editor.main'], function() {
                     insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
                     documentation: 'Função enviar.\nExemplo: enviar(x)'
                 },
+                {
+                    label: 'devolver',
+                    kind: monaco.languages.CompletionItemKind.Keyword,
+                    insertText: 'devolver (${1:texto/variavel/valor})',
+                    insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+                    documentation: 'Retorno de Função.\nExemplo: devolver(x)'
+                },
             ];
             return {
                 suggestions: sugestoes
@@ -230,19 +234,29 @@ require(['vs/editor/editor.main'], function() {
     window.editor = monaco.editor.create(document.getElementById('container'), {
         //texto inicial do editor
         value: [
-            '// Função x com saída //',
-            'Func x ()',
-            '\tenviar ("Olá Mundo")',
-            '\tenviar ("asd")',
-            //'\tdevolver (0)',
-            '',
-            'inteiro xyz = 123',
-            'real xxxx = 133.13',
-            'booleano asdasd = falso',
-            'string wwww = "asdasd"',
-            'enviar ("teste")',
-            'x ("PseudoPt")',
-            'enviar ("PseudoPT")',
+            // '// Função x com saída //',
+            // 'Func x ()',
+            // '\tenviar ("Olá Mundo")',
+            // '\tenviar ("asd")',
+            // '\tdevolver (0)',
+            // '',
+            // 'inteiro xyz = 123',
+            // 'real xxxx = 133.13',
+            // 'booleano asdasd = falso',
+            // 'string wwww = "asdasd"',
+            // 'enviar ("teste")',
+            // '',
+            // 'Func a ()',
+            // '\tenviar ("Olá Mundo")',
+            // '\tenviar ("asd")',
+            // '\tdevolver (0)',
+            // '',
+            // 'x ("PseudoPt")',
+            'inteiro aaa = 12',
+            'inteiro bbb = 21',
+            'enviar (aaa)',
+            'enviar (aaa + " " + bbb)',
+            // 'inteiro bbb = (xyz + xxxx)',
         ].join('\n'),
         //a implementação do Pseudo-PT
         language: 'PseudoPT',

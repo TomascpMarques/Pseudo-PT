@@ -3,6 +3,7 @@
  *  @license MIT Copyright (c) 2020 Tomás Carruço Pedro Marques.
  */
 
+
 /**
  * @name formatarConteudoEditor()
  * @param str string a ser tratada
@@ -14,7 +15,7 @@
  *      em cada elemento do novo vetor, pós .split(/^\s*$/gm), vai dividir cada linha 
  *      que tenha uma new-line, filtra cada elemento do vetor para retirar comentários
  *      e linhas vaizas. O resultado é um vetor de 'blocos de código' criados a partir 
- *      do conteúdo do editor, esse blocos são depois separados por linhas, 
+ *      do conteúdo do editor, esse blocos são depois separados por linhas
  *      deixando no final só o código do PseudoPT.
  * ===========================================================================================
  */
@@ -26,6 +27,7 @@ let formatarConteudoEditor = (str) => {
         .map(a => a.filter(b => !(b.includes('//'))))
         .map(a => a.filter(b => b != ''));
 };
+
 
 /**
  * @name func_Process()
@@ -70,6 +72,7 @@ let func_Process = (arr) => {
             };
         };
     };
+
     return funcsConteudo;
 };
 
@@ -96,64 +99,49 @@ let variaveis_Process = (arr) => {
     // Contentor das variáveis
     var variaveis = {};
 
+    var funcs = {
+        varNome: str => str.match(/\s[a-zA-Z]{1,}(\s{1,})/gm).toString().trim(),
+        varIntVal: str => str.match(/(=)(\s|)[0-9|a-zA-Z]{1,}/gm).toString().slice(2),
+        varRelVal: str => str.match(/[0-9]{1,}.[0-9]{1,}/gm).toString(),
+        varBolVal: str => str.match(/(verdade|falso)/gm).toString(),
+        varStrVal: str => str.match(/"[0-9|a-zA-Z]{1,}"/gm).toString().slice(1, -1),
+    };
+
     for (j in arr) {
         for (x in arr[j]) {
             // Verifica se a linha é atribuição de valor a uma var
             if (arr[j][x].includes('inteiro')) {
-                // Retira o nome da var com regex da linha
-                var varNome = arr[j][x]
-                    .match(/\s[a-zA-Z]{1,}/gm)
-                    .toString()
-                    .trim();
-
-                //Retira o valor da var com regex da linha
-                var varValor = arr[j][x]
-                    .match(/(=)(\s|)[0-9|a-zA-Z]{1,}/gm)
-                    .toString()
-                    .slice(2);
-
                 // Tenta converter o valor para um número real/inteiro
                 // Se der, adiciona o valor númerico no objeto de retorno
                 // Se não, (deu catch no NaN) introduz como string.
                 try {
+                    // Retira o nome da var com regex da linha
+                    var varNome = funcs.varNome(arr[j][x]);
+                    //Retira o valor da var com regex da linha
+                    var varValor = funcs.varIntVal(arr[j][x])
+
                     varValor = Number(varValor);
                     variaveis[varNome] = varValor;
-                    console.log('VARIAVEL: ', typeof varValor, ' N ', varValor);
                 } catch (NaN) {
                     variaveis[varNome] = varValor;
-                    console.log('VARIAVEL: ', typeof varValor, ' S ', varValor);
                 };
-            };
+            }
 
             if (arr[j][x].includes('real')) {
-                var varNome = arr[j][x]
-                    .match(/\s[a-zA-Z]{1,}/gm)
-                    .toString()
-                    .trim();
-
-                var varValor = arr[j][x]
-                    .match(/[0-9]{1,}.[0-9]{1,}/gm)
-                    .toString();
-
                 try {
+                    var varNome = funcs.varNome(arr[j][x]);
+                    var varValor = funcs.varRelVal(arr[j][x])
+
                     varValor = Number(varValor);
                     variaveis[varNome] = varValor;
-                    console.log('VARIAVEL: ', typeof varValor, ' F ', varValor);
                 } catch (NaN) {
                     variaveis[varNome] = varValor;
-                    console.log('VARIAVEL: ', typeof varValor, ' S ', varValor);
                 };
-            };
+            }
 
             if (arr[j][x].includes('booleano')) {
-                var varNome = arr[j][x]
-                    .match(/\s[a-zA-Z]{1,}(\s{1,})/gm)
-                    .toString()
-                    .trim();
-
-                var varValor = arr[j][x]
-                    .match(/(verdade|falso)/gm)
-                    .toString();
+                var varNome = funcs.varNome(arr[j][x]);
+                var varValor = funcs.varBolVal(arr[j][x]);
 
                 // Traduz o falso/verdade do Pseudo para true/false
                 if (varValor == 'verdade')
@@ -163,23 +151,15 @@ let variaveis_Process = (arr) => {
             };
 
             if (arr[j][x].includes('string')) {
-                var varNome = arr[j][x]
-                    .match(/\s[a-zA-Z]{1,}/gm)
-                    .toString()
-                    .trim();
-
-                var varValor = arr[j][x]
-                    .match(/"[0-9|a-zA-Z]{1,}"/gm)
-                    .toString()
-                    .slice(1, -1);
-
                 // Como o valor já é uma string, introduz logo o valor no objeto
-                variaveis[varNome] = varValor;
+                variaveis[funcs.varNome(arr[j][x])] =
+                    funcs.varStrVal(arr[j][x]);
             };
         };
     };
     return variaveis;
 };
+
 
 /**
  * @name criar_Call_StacK()
@@ -194,33 +174,62 @@ let variaveis_Process = (arr) => {
  */
 let criar_Call_Stack = (arr) => {
     let callStack = [];
-
+    let temp = [];
     // Só adiciona ao callStack se não for,
     // uma criação de uma Função, 
     // mas adicona se for chamada.
     for (x in arr)
         if (!(arr[x][0].includes('Func')))
-            callStack.push(arr[x]);
+            temp.push(arr[x]);
+
+
+    for (i in temp)
+        for (j in temp[i])
+            callStack.push(temp[i][j])
+    temp = [];
 
     return callStack;
 };
 
-// var keyWords = {
-//     enviar: (str) => {
-//         str == str || '';
-//         return str;
-//     },
-// };
 
-// let chamar_Call_Stack = (callStack, funcoesProcess) => {
-//     let funcoes = func_Process;
-//     for (x in callStack) {
+let chamar_Call_Stack = (callStack, funcoesProcess, variaveis_Process) => {
+    let funcoes = funcoesProcess;
+    let vars = variaveis_Process;
+    let operadores = '+-*/=<><=>===!=&&||-=*=/='
+    var out = '';
 
-//     }
-// };
+    for (x in callStack) {
+        var linha = callStack[x];
+
+        if (linha.includes('enviar')) {
+            console.log(linha)
+            if (!(linha.match(/[+*-/]/gm)) && !(linha.includes('"'))) {
+                linha = linha.replace(/"/gm, '');
+
+                var varVal = linha
+                    .match(/\([a-zA-Z]{1,}\)/gm)
+                    .toString()
+                    .slice(1, -1);
+
+                console.log(">>>", varVal);
+                out += (vars[varVal]) + '\n';
+
+            }
+            if (linha.match(/[+*-/]/gm) && !(linha.includes('"'))) {
+                linha = linha.replace(/"/gm, '');
+                console.log("->>", linha);
+            }
+
+        };
+    };
+
+    return out;
+};
+
 
 let main = () => {
-    var codigo_output = ' ';
+    console.clear();
+    var codigo_output = '';
 
     //window.editor é a referencia ao editor criado em ide-setup.js
     var conteudo = formatarConteudoEditor(window.editor.getValue());
@@ -229,8 +238,13 @@ let main = () => {
     let pseudoFuncs = func_Process(conteudo);
     console.log('-> Func-Geter', pseudoFuncs);
 
+    let pseudoVars = variaveis_Process(conteudo);
+    console.log('-> Vars Process', pseudoVars);
+
     let ordemLogica = criar_Call_Stack(conteudo);
     console.log('-> call_stack', ordemLogica);
 
-    document.getElementById('output').value = ordemLogica;
+    codigo_output = chamar_Call_Stack(ordemLogica, pseudoFuncs, pseudoVars);
+
+    document.getElementById('output').value = codigo_output;
 };
